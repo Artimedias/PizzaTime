@@ -145,5 +145,74 @@ function nums(a, b)
             b = (b + "I")
         }
     }
-    return VIV;
+    return b;
 }
+
+Expected Result: VIV
+Test failed. 
+Reason: Uncaught Error from previous test, changing the value of a has unintended consequences for the for loop
+
+Test 8: Nums should print out a V for every 5, and an I for every 1
+
+number = 12;
+string = ("");
+console.log(nums(number, string));
+function nums(a, b)
+{
+let c = a;
+    for(i = 0; i < (a); i++)
+    {
+        if (c >= 5)
+        {
+            b = (b+"V")
+            c = (c - 5)
+        }
+        else if (c >= 1)
+        {
+            b = (b + "I")
+            c = (c - 1)
+        }
+        else
+        {
+            return b;
+        }
+    }
+    return b;
+}
+Expected Result: VVII
+
+Test 9: Nums should only allow a maximum of 3 I's to be placed in a row, and do IV if there is four
+
+number = 9;
+string = ("");
+console.log(nums(number, string));
+function nums(a, b)
+{
+let c = a;
+    for(i = 0; i < (a); i++)
+    {
+        if (c >= 5)
+        {
+            b = (b+"V")
+            c = (c - 5)
+        }
+        else if (c === 4)
+        {
+            b = (b+"IV")
+            c = 
+        }
+        else if (c >= 1)
+        {
+            b = (b + "I")
+            c = (c - 1)
+        }
+        else
+        {
+        	 console.log("stopped early!")
+            return b;
+        }
+    }
+    return b;
+}
+
+Expected Result: VIV
