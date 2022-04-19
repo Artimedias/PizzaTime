@@ -1,18 +1,24 @@
-number = 7;
+number = 12;
 string = ("");
 console.log(nums(number, string));
 function nums(a, b)
 {
+let c = a;
     for(i = 0; i < (a); i++)
     {
-        if (a >= 5)
+        if (c >= 5)
         {
             b = (b+"V")
-            a = (a - 4)
+            c = (c - 5)
+        }
+        else if (c >= 1)
+        {
+            b = (b + "I")
+            c = (c - 1)
         }
         else
         {
-            b = (b + "I")
+            return b;
         }
     }
     return b;
