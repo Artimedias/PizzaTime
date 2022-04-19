@@ -1,4 +1,4 @@
-number = 12;
+number = 9;
 string = ("");
 console.log(nums(number, string));
 function nums(a, b)
@@ -11,6 +11,11 @@ let c = a;
             b = (b+"V")
             c = (c - 5)
         }
+        else if (c === 4)
+        {
+            b = (b+"IV")
+            c = (c - 4)
+        }
         else if (c >= 1)
         {
             b = (b + "I")
@@ -18,6 +23,7 @@ let c = a;
         }
         else
         {
+        	 console.log("stopped early!")
             return b;
         }
     }

@@ -199,7 +199,7 @@ let c = a;
         else if (c === 4)
         {
             b = (b+"IV")
-            c = 
+            c = (c - 4)
         }
         else if (c >= 1)
         {
