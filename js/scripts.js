@@ -41,6 +41,16 @@ let currentString = "";
  console.log(orderString);
 }
 
+function extra (a, b, c)
+{
+    console.log("Reached!")
+    if (a === b)
+    {
+        c = false;
+    }
+return c;
+}
+
 //UI
 let sizeP = "Mod"
 let sauceP = "Red"
@@ -52,13 +62,17 @@ let meatPY = "No Meats"
 let veggieP = "Red Onions"
 let veggiePY = "No Veggies"
 let spiceP = "No Spices"
-let dressing = "No Sauce"
+let dressingP = "No Sauce"
+
+let cheeseTruth = true;
+let meatTruth = true;
+let veggieTruth = true;
 
 $(document).ready(function() {
 
   $("#formOne").submit(function(event) {
     event.preventDefault();
-     //sizeP = $("#sizeInput").val();
+     sizeP = $("#sizeInput").val();
 
     $(".form-size").toggle();
     $(".form-sauce").toggle();
@@ -69,7 +83,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#formTwo").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    sauceP = $("#sauceInput").val();
 
     $(".form-sauce").toggle();
     $(".form-flavor").toggle();
@@ -79,7 +93,8 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#formThree").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    flavorP = $("#flavorInput").val();
+
 
     $(".form-flavor").toggle();
     $(".form-cheese-one").toggle();
@@ -89,17 +104,28 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#formFour").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    cheeseP = $("#cheeseInputOne").val();
+    console.log(cheeseP)
+
+    cheeseTruth = extra(cheeseP, cheesePY, cheeseTruth)
+    if(cheeseTruth === true)
+    {
+        $(".form-cheese-two").toggle();
+    }
+    else
+    {
+        $(".form-meat-one").toggle();
+    }
 
     $(".form-cheese-one").toggle();
-    $(".form-cheese-two").toggle();
+
   });
 });
 
 $(document).ready(function() {
   $("#formFive").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    cheesePY = $("#cheeseInputTwo").val();
 
     $(".form-cheese-two").toggle();
     $(".form-meat-one").toggle();
@@ -109,17 +135,26 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#formSix").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    meatP = $("#meatInputOne").val();
+
+    meatTruth = extra(meatP, meatPY, meatTruth)
+    if(meatTruth === true)
+    {
+        $(".form-meat-two").toggle();
+    }
+    else
+    {
+        $(".form-veggies-one").toggle();
+    }
 
     $(".form-meat-one").toggle();
-    $(".form-meat-two").toggle();
   });
 });
 
 $(document).ready(function() {
   $("#formSeven").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    meatPY = $("#meatInputTwo").val();
 
     $(".form-meat-two").toggle();
     $(".form-veggies-one").toggle();
@@ -129,17 +164,27 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#formEight").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    veggieP = $("#veggieInputOne").val();
+
+    veggieTruth = extra(veggieP, veggiePY, veggieTruth)
+    if(veggieTruth === true)
+    {
+        $(".form-veggies-two").toggle();
+    }
+    else
+    {
+        $(".form-spice").toggle();
+    }
+
 
     $(".form-veggies-one").toggle();
-    $(".form-veggies-two").toggle();
   });
 });
 
 $(document).ready(function() {
   $("#formNine").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    veggiePY = $("#veggieInputTwo").val();
 
     $(".form-veggies-two").toggle();
     $(".form-spice").toggle();
@@ -149,7 +194,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#formTen").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    spiceP = $("#spiceInput").val();
 
     $(".form-spice").toggle();
     $(".form-dessing").toggle();
@@ -159,7 +204,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#formEleven").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
+    dressingP = $("#dressingInput").val();
 
     $(".form-dessing").toggle();
     $(".form-newPizza").toggle();
@@ -170,7 +215,6 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#formTwelve").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
 
     $(".form-size").toggle();
     $(".form-newPizza").toggle();
@@ -181,7 +225,6 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#main").submit(function(event) {
     event.preventDefault();
-    sizeP = $("#sizeInput").val();
 
     $("#main").toggle();
     $("#output").toggle();
