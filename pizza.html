@@ -12,10 +12,120 @@
       <h2></h2>
     <form id="formOne">
       <div class="form-group">
-        <p>Gimme yo nums:</p>
-        <textarea id="Number" name="text-passage" class="form-control"></textarea>
+        <p>What size pizza can we get for you?</p>
+        <select class="form-control" id="sizeInput">
+          <option>Mini</option>
+          <option>Mod</option>
+          <option>Mega</option>
+          <option>Gluten Free</option>
+        </select>
+
+        <p>What type of sauce would you like on your pizza?</p>
+        <select class="form-control" id="sauceInput">
+          <option>Red</option>
+          <option>White</option>
+          <option>Pesto</option>
+          <option>BBQ</option>
+          <option>Ranch</option>
+          <option>Olive Oil</option>
+          <option>No Sauce</option>
+        </select>
+
+        <p>Any Garlic or Basil?</p>
+        <select class="form-control" id="garnishInput">
+          <option>Garlic</option>
+          <option>Basil</option>
+          <option>Both</option>
+          <option>Neither</option>
+        </select>
+
+        <p>What type of cheese do you want today?</p>
+        <select class="form-control" id="cheeseInputOne">
+          <option>Mozzerella</option>
+          <option>Feta</option>
+          <option>Asiago</option>
+          <option>Gorgonzola</option>
+          <option>Dairy Free</option>
+          <option>No Cheese</option>
+        </select>
+
+        <p>Would you like some extra cheese?</p>
+        <select class="form-control" id="cheeseInputTwo">
+          <option>Mozzerella</option>
+          <option>Feta</option>
+          <option>Asiago</option>
+          <option>Gorgonzola</option>
+          <option>Dairy Free</option>
+          <option>No Cheese</option>
+        </select>
+
+        <p>Any meats for you today?</p>
+        <select class="form-control" id="meatInputOne">
+          <option>Pepperoni</option>
+          <option>Mild Pork Sausage</option>
+          <option>Spicky Chicken Sausage</option>
+          <option>Bacon</option>
+          <option>Roasted Chicken</option>
+          <option>Canadian Bacon</option>
+          <option>Vegan Sausage</option>
+          <option>No Meats</option>
+        </select>
+
+        <p>Would you like some extra meats?</p>
+        <select class="form-control" id="meatInputTwo">
+          <option>Pepperoni</option>
+          <option>Mild Pork Sausage</option>
+          <option>Spicky Chicken Sausage</option>
+          <option>Bacon</option>
+          <option>Roasted Chicken</option>
+          <option>Canadian Bacon</option>
+          <option>Vegan Sausage</option>
+          <option>No Meats</option>
+        </select>
+
+        <p>What kind of veggies can we do for you?</p>
+        <select class="form-control" id="veggieInputOne">
+          <option>Mushrooms</option>
+          <option>Pineapple</option>
+          <option>Red Onions</option>
+          <option>Black Olives</option>
+          <option>Green Peppers</option>
+          <option>Artichokes</option>
+          <option>No Veggies</option>
+        </select>
+
+        <p>Would you like some extra vegetables?</p>
+        <select class="form-control" id="veggieInputTwo">
+          <option>Mushrooms</option>
+          <option>Pineapple</option>
+          <option>Red Onions</option>
+          <option>Black Olives</option>
+          <option>Green Peppers</option>
+          <option>Artichokes</option>
+          <option>No Veggies</option>
+        </select>
+
+        <p>Would you like some spice?</p>
+        <select class="form-control" id="spiceInput">
+          <option>Salt and Pepper</option>
+          <option>Rosemary</option>
+          <option>Oregano</option>
+          <option>No Spices</option>
+        </select>
+
+        <p>Do you want a dipping sauce?</p>
+        <select class="form-control" id="dressingInput">
+          <option>Mozzerella</option>
+          <option>Feta</option>
+          <option>Asiago</option>
+          <option>Gorgonzola</option>
+          <option>Dairy Free</option>
+          <option>No Cheese</option>
+        </select>
+
         <button type="submit" class="btn btn-success">Got all ya nums?</button>
     </form>
+
     <div id="output">
     <p>Heres yo ceaser salad: <span id="total-count"></span></p>
     </div>
