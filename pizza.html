@@ -10,7 +10,7 @@
 <body>
   <div class="container">
       <h2></h2>
-  <form id = "main">
+  <!--<form id = "main">-->
     <form id="formOne">
       <div class="form-size">
         <p>What size pizza can we get for you?</p>
@@ -20,7 +20,9 @@
           <option>Mega</option>
           <option>Gluten Free</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
     <form id="formTwo">
@@ -33,10 +35,12 @@
           <option>BBQ</option>
           <option>Ranch</option>
           <option>Olive Oil</option>
-          <option>Spicy Red Sauce</option>
+          <option>Spicy Red</option>
           <option>No Sauce</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
       
@@ -50,7 +54,9 @@
           <option>Both</option>
           <option>Neither</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
@@ -65,7 +71,9 @@
           <option>Dairy Free</option>
           <option>No Cheese</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
@@ -81,7 +89,9 @@
           <option>Dairy Free</option>
           <option>No Cheese</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
@@ -99,7 +109,9 @@
           <option>Vegan Sausage</option>
           <option>No Meats</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
@@ -116,7 +128,9 @@
           <option>Vegan Sausage</option>
           <option>No Meats</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
@@ -133,7 +147,9 @@
           <option>Roasted Red Peppers</option>
           <option>No Veggies</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
@@ -150,7 +166,9 @@
           <option>Roasted Red Peppers</option>
           <option>No Veggies</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
@@ -163,7 +181,9 @@
           <option>Oregano</option>
           <option>No Spices</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
@@ -179,21 +199,31 @@
           <option>Siracha</option>
           <option>No Sauce</option>
         </select>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Next</button>
+      </div>
       </div>
     </form>
 
-    <p>Do you want anything else?
-    </p>
+
     <form id="formTwelve">
       <div class="form-newPizza">
+        <p>Do you want anything else?</p>
+        <div class="Clickable">
         <button type="submit" class="btn btn-success">Yes</button>
+      </div>
     </form>
+    <form id = "formThirteen">
+    <div class="No">
+      <div class="Clickable">
     <button type="submit" class="btn btn-success">No</button>
-  </form>
+      </div>
+    </form>
+    </div>
+  <!--</form>-->
 
     <div id="output">
-    <p>Heres yo ceaser salad: <span id="total-count"></span></p>
+    <p>Heres yo ceaser salad: <!--<span id="total-count"></span>--></p>
     </div>
 </body>
 </html>

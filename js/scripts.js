@@ -26,7 +26,7 @@ function topper (pizzaString, pizza)
  return pizzaString;
 }
 
-//orderString = order(allPizzas)
+
 function order (list)
 {
 let orderString = "You Ordered " + list.length + " Pizzas.";
@@ -51,6 +51,28 @@ function extra (a, b, c)
 return c;
 }
 
+function line (size, sauce, flavor, toppings, garnish, dressing, command)
+{
+    newPizza = new pizza(size, sauce, flavor, toppings, garnish, dressing)
+    command.push(newPizza);
+}
+
+function laser (array)
+{
+    for (i = 0; i < array.length; i++)
+  {
+    if (array[i].charAt(0) === N && array[i].charAt(1) === o)
+    {
+        array[i] = ""
+    }
+    if (array[i] === array[i+1])
+    {
+        array[i] = ""
+        array[i+1] = ("Extra " + array[i+1])
+    }
+  }
+}
+
 //UI
 let sizeP = "Mod"
 let sauceP = "Red"
@@ -63,6 +85,8 @@ let veggieP = "Red Onions"
 let veggiePY = "No Veggies"
 let spiceP = "No Spices"
 let dressingP = "No Sauce"
+
+
 
 let cheeseTruth = true;
 let meatTruth = true;
@@ -126,6 +150,8 @@ $(document).ready(function() {
   $("#formFive").submit(function(event) {
     event.preventDefault();
     cheesePY = $("#cheeseInputTwo").val();
+    console.log(cheesePY);
+    console.log($("#cheeseInputTwo").val());
 
     $(".form-cheese-two").toggle();
     $(".form-meat-one").toggle();
@@ -219,14 +245,42 @@ $(document).ready(function() {
     $(".form-size").toggle();
     $(".form-newPizza").toggle();
     $(".No").toggle();
+
+    hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY];
+
+    line(sizeP, sauceP, flavorP, hat, spiceP, dressingP, allPizzas);
+    orderString = order(allPizzas)
+
+     sizeP = "Mod"
+     sauceP = "Red"
+     flavorP = "Neither"
+     cheeseP = "Mozzerella"
+     cheesePY = "No Cheese"
+     meatP = "Pepperoni"
+     meatPY = "No Meats"
+     veggieP = "Red Onions"
+     veggiePY = "No Veggies"
+     spiceP = "No Spices"
+     dressingP = "No Sauce"
+
+     cheeseTruth = true;
+     meatTruth = true;
+     veggieTruth = true;
   });
 });
 
 $(document).ready(function() {
-  $("#main").submit(function(event) {
+  $("#formThirteen").submit(function(event) {
     event.preventDefault();
 
-    $("#main").toggle();
+    $(".form-newPizza").toggle();
+    $(".No").toggle();
     $("#output").toggle();
+
+    hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY];
+    hat = laser(hat);
+
+    line(sizeP, sauceP, flavorP, hat, spiceP, dressingP, allPizzas);
+    orderString = order(allPizzas)
   });
 });

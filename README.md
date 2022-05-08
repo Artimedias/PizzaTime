@@ -106,7 +106,9 @@ let currentString = "";
 }
 
 Expected Result
-
+You Ordered Two Pizzas
+A large red sauce pizza with Mozzerlla Black Olives Pepperoni
+A mini white sauce pizza with Feta Green Peppers
 
 
 
@@ -123,5 +125,39 @@ function topper (pizzaString, pizza)
     });
  return pizzaString;
 }
+
+Testing: line
+
+Test 1: Line should be able to take in whatever the customer inputs, and put it together as a pizza object
+
+    newPizza = new pizza(size, sauce, flavor, toppings, garnish, dressing)
+    command.push(newPizza);
+
+Expected Result: it works idk im tired. It worked.
+
+Testing: laser
+
+Test 1: Lazer should destroy any instances of the customer ordering no toppings or anything, and replace double orders with an "extra"
+
+    hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY];
+    hat = laser(hat);
+
+function laser (array)
+{
+    for (i = 0; i < array.length; i++)
+  {
+    if (array[i].charAt(0) === N && array[i].charAt(1) === o)
+    {
+        array[i] = ""
+    }
+    if (array[i] === array[i+1])
+    {
+        array[i] = ""
+        array[i+1] = ("Extra " + array[i+1])
+    }
+  }
+}
+
+Expected Result: 
 
 
