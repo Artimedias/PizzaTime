@@ -2,10 +2,6 @@
     display: none;
   }
 
-.form-size {
-  display: none;
-}
-
 .form-sauce {
   display: none;
 }
@@ -30,11 +26,11 @@
   display: none;
 }
 
-.form-veggie-one {
+.form-veggies-one {
   display: none;
 }
 
-.form-veggie-two {
+.form-veggies-two {
   display: none;
 }
 
@@ -42,7 +38,7 @@
   display: none;
 }
 
-.form-dip {
+.form-dessing {
   display: none;
 }
 
@@ -52,4 +48,13 @@
 
 .No {
   display: none;
+}
+
+.Clickable {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.Clickable:hover {
+  text-decoration: underline;
 }
