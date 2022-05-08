@@ -1,13 +1,13 @@
 let pizzaString = "";
 let allPizzas = [];
+let price = 0;
 
-function pizza(size, sauce, flavor, toppings, dressing, garnish) {
+function pizza(size, sauce, flavor, toppings, dressing) {
     this.size = size;
     this.sauce = sauce;
     this.flavor = flavor;
     this.toppings = toppings;
     this.dressing = dressing;
-    this.garnish = garnish;
   }
 
   /*pizzaOne = new pizza("large", "red", ["Mozzerella" , "Black Olives", "Pepperoni"], "Hot Honey");
@@ -27,18 +27,23 @@ function topper (pizzaString, pizza)
 }
 
 
-function order (list)
+function order (list, cost)
 {
 let orderString = "You Ordered " + list.length + " Pizzas.";
 let currentString = "";
     for (i = 0; i < list.length; i++)
   {
-  	let currentString = "";
+  	 currentString = "";
     currentString = topper(currentString, list[i])
+
+    cost += money(list[i])
    
-  	orderString = orderString + ("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + currentString);
+  	orderString = orderString + ("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + list[i].flavor + " " + currentString + " and " + list[i].dressing + " on the side");
+
+      
   }
- console.log(orderString);
+  orderString = orderString + ("\n Your total is " + cost + " dollars. \n Thank you for eating at the Mountaintop Pizza Palace.")
+ return orderString;
 }
 
 function extra (a, b, c)
@@ -51,9 +56,9 @@ function extra (a, b, c)
 return c;
 }
 
-function line (size, sauce, flavor, toppings, garnish, dressing, command)
+function line (size, sauce, flavor, toppings, dressing, command)
 {
-    newPizza = new pizza(size, sauce, flavor, toppings, garnish, dressing)
+    newPizza = new pizza(size, sauce, flavor, toppings, dressing)
     command.push(newPizza);
 }
 
@@ -73,6 +78,67 @@ function laser (array)
     console.log(array[i]);
   }
   return array;
+
+}
+
+function money (gold)
+{
+    let cash = parseInt(5);
+
+    if (gold.sauce !== "")
+    {
+        cash += .5;
+    }
+
+    if (gold.flavor === "Garlic")
+    {
+        cash += .25;
+    }
+    else if ( gold.flavor === "Basil")
+    {
+        cash += 1;
+    }
+    else if (gold.flavor === "Garlic and Basil")
+    {
+        cash += 1.25;
+    }
+
+    gold.toppings.forEach(function(element)
+    {
+        if (element.charAt(0) === "E")
+        {
+            cash += 1.5;
+        }
+        else if (element !== "")
+        {
+            cash += 1;
+        }
+    });
+
+    if (gold.dressing !== "No Sauce")
+    {
+        cash += 1;
+    }
+
+    if (gold.size === "Mini")
+    {
+        cash *= .75;
+    }
+    else if (gold.size === "Mega")
+    {
+        cash *= 1.5;
+    }
+    else if (gold.size === "Gluten Free")
+    {
+        cash *= 1.25;
+    }
+
+    cash *= 1.10
+    //for tax
+
+    cash.toFixed(2);
+    //this doesnt work. Not sure why not.
+    return cash;
 
 }
 
@@ -249,10 +315,12 @@ $(document).ready(function() {
     $(".form-newPizza").toggle();
     $(".No").toggle();
 
-    hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY];
+    hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY, spiceP];
+    hat = laser(hat);
+    console.log(hat)
 
-    line(sizeP, sauceP, flavorP, hat, spiceP, dressingP, allPizzas);
-    orderString = order(allPizzas)
+    line(sizeP, sauceP, flavorP, hat, dressingP, allPizzas);
+    //orderString = order(allPizzas, price)
 
      sizeP = "Mod"
      sauceP = "Red"
@@ -278,13 +346,16 @@ $(document).ready(function() {
 
     $(".form-newPizza").toggle();
     $(".No").toggle();
-    $("#output").toggle();
+    
 
-    hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY];
+    hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY, spiceP];
     hat = laser(hat);
     console.log(hat)
 
-    line(sizeP, sauceP, flavorP, hat, spiceP, dressingP, allPizzas);
-    orderString = order(allPizzas)
+    line(sizeP, sauceP, flavorP, hat, dressingP, allPizzas);
+    orderString = order(allPizzas, price)
+    $(".securityCode").text(orderString);
+
+    $("#output").toggle();
   });
 });
