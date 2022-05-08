@@ -1,3 +1,55 @@
-#formletter {
+#output {
     display: none;
   }
+
+.form-size {
+  display: none;
+}
+
+.form-sauce {
+  display: none;
+}
+
+.form-flavor {
+  display: none;
+}
+
+.form-cheese-one {
+  display: none;
+}
+
+.form-cheese-two {
+  display: none;
+}
+
+.form-meat-one {
+  display: none;
+}
+
+.form-meat-two {
+  display: none;
+}
+
+.form-veggie-one {
+  display: none;
+}
+
+.form-veggie-two {
+  display: none;
+}
+
+.form-spice {
+  display: none;
+}
+
+.form-dip {
+  display: none;
+}
+
+.form-newPizza {
+  display: none;
+}
+
+.No {
+  display: none;
+}
