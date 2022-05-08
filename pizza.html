@@ -10,8 +10,9 @@
 <body>
   <div class="container">
       <h2></h2>
+  <form id = "main">
     <form id="formOne">
-      <div class="form-group">
+      <div class="form-size">
         <p>What size pizza can we get for you?</p>
         <select class="form-control" id="sizeInput">
           <option>Mini</option>
@@ -19,7 +20,11 @@
           <option>Mega</option>
           <option>Gluten Free</option>
         </select>
-
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
+    <form id="formTwo">
+      <div class="form-sauce">
         <p>What type of sauce would you like on your pizza?</p>
         <select class="form-control" id="sauceInput">
           <option>Red</option>
@@ -28,17 +33,29 @@
           <option>BBQ</option>
           <option>Ranch</option>
           <option>Olive Oil</option>
+          <option>Spicy Red Sauce</option>
           <option>No Sauce</option>
         </select>
-
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
+      
+      
+    <form id="formThree">
+      <div class="form-flavor">
         <p>Any Garlic or Basil?</p>
-        <select class="form-control" id="garnishInput">
+        <select class="form-control" id="flavorInput">
           <option>Garlic</option>
           <option>Basil</option>
           <option>Both</option>
           <option>Neither</option>
         </select>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
 
+    <form id="formFour">
+      <div class="form-cheese-one">
         <p>What type of cheese do you want today?</p>
         <select class="form-control" id="cheeseInputOne">
           <option>Mozzerella</option>
@@ -48,7 +65,13 @@
           <option>Dairy Free</option>
           <option>No Cheese</option>
         </select>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
 
+
+    <form id="formFive">
+      <div class="form-cheese-two">
         <p>Would you like some extra cheese?</p>
         <select class="form-control" id="cheeseInputTwo">
           <option>Mozzerella</option>
@@ -58,7 +81,13 @@
           <option>Dairy Free</option>
           <option>No Cheese</option>
         </select>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
 
+
+    <form id="formSix">
+      <div class="form-meat-one">
         <p>Any meats for you today?</p>
         <select class="form-control" id="meatInputOne">
           <option>Pepperoni</option>
@@ -70,7 +99,12 @@
           <option>Vegan Sausage</option>
           <option>No Meats</option>
         </select>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
 
+    <form id="formSeven">
+      <div class="form-meat-two">
         <p>Would you like some extra meats?</p>
         <select class="form-control" id="meatInputTwo">
           <option>Pepperoni</option>
@@ -82,7 +116,12 @@
           <option>Vegan Sausage</option>
           <option>No Meats</option>
         </select>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
 
+    <form id="formEight">
+      <div class="form-veggies-one">
         <p>What kind of veggies can we do for you?</p>
         <select class="form-control" id="veggieInputOne">
           <option>Mushrooms</option>
@@ -91,9 +130,15 @@
           <option>Black Olives</option>
           <option>Green Peppers</option>
           <option>Artichokes</option>
+          <option>Roasted Red Peppers</option>
           <option>No Veggies</option>
         </select>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
 
+    <form id="formNine">
+      <div class="form-veggies-two">
         <p>Would you like some extra vegetables?</p>
         <select class="form-control" id="veggieInputTwo">
           <option>Mushrooms</option>
@@ -102,9 +147,15 @@
           <option>Black Olives</option>
           <option>Green Peppers</option>
           <option>Artichokes</option>
+          <option>Roasted Red Peppers</option>
           <option>No Veggies</option>
         </select>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
 
+    <form id="formTen">
+      <div class="form-spice">
         <p>Would you like some spice?</p>
         <select class="form-control" id="spiceInput">
           <option>Salt and Pepper</option>
@@ -112,19 +163,34 @@
           <option>Oregano</option>
           <option>No Spices</option>
         </select>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
+    </form>
 
+    <form id="formEleven">
+      <div class="form-dessing">
         <p>Do you want a dipping sauce?</p>
         <select class="form-control" id="dressingInput">
-          <option>Mozzerella</option>
-          <option>Feta</option>
-          <option>Asiago</option>
-          <option>Gorgonzola</option>
-          <option>Dairy Free</option>
-          <option>No Cheese</option>
+          <option>Red Sauce</option>
+          <option>BBQ</option>
+          <option>Ranch</option>
+          <option>Hot Honey</option>
+          <option>Buffalo Hot Sauce</option>
+          <option>Siracha</option>
+          <option>No Sauce</option>
         </select>
-
-        <button type="submit" class="btn btn-success">Got all ya nums?</button>
+        <button type="submit" class="btn btn-success">Next</button>
+      </div>
     </form>
+
+    <p>Do you want anything else?
+    </p>
+    <form id="formTwelve">
+      <div class="form-newPizza">
+        <button type="submit" class="btn btn-success">Yes</button>
+    </form>
+    <button type="submit" class="btn btn-success">No</button>
+  </form>
 
     <div id="output">
     <p>Heres yo ceaser salad: <span id="total-count"></span></p>
