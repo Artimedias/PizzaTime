@@ -10,18 +10,11 @@ function pizza(size, sauce, flavor, toppings, dressing) {
     this.dressing = dressing;
   }
 
-  /*pizzaOne = new pizza("large", "red", ["Mozzerella" , "Black Olives", "Pepperoni"], "Hot Honey");
-  allPizzas.push(pizzaOne);
-  pizzaTwo = new pizza("mini", "white", ["Feta", "Green Peppers", "Green Peppers"], "Pesto")
-  allPizzas.push(pizzaTwo);*/
-
-
 function topper (pizzaString, pizza)
 {
     pizza.toppings.forEach(function(element) {
-        //console.log(element)
       pizzaString = pizzaString.concat(element);
-      pizzaString += " ";
+      pizzaString += ", ";
     });
  return pizzaString;
 }
@@ -36,7 +29,7 @@ let currentString = "";
   	 currentString = "";
     currentString = topper(currentString, list[i])
 
-    cost += money(list[i])
+    cost += parseFloat(money(list[i]))
    
   	orderString = orderString + ("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + list[i].flavor + " " + currentString + " and " + list[i].dressing + " on the side");
 
@@ -134,11 +127,9 @@ function money (gold)
     }
 
     cash *= 1.10
+    returnCash = cash.toFixed(2);
     //for tax
-
-    cash.toFixed(2);
-    //this doesnt work. Not sure why not.
-    return cash;
+    return returnCash;
 
 }
 
