@@ -41,6 +41,10 @@ function pizza(size, sauce, toppings, dressing) {
 
 console.log("You Ordered One Pizza. \n It is a " + pizzaOne.size + " " + pizzaOne.sauce + " sauce pizza with " + pizzaString);
 
+Expected Result: 
+You Ordered One Pizza.
+It is a large red sauce pizza with Mozzerlla Black Olives Pepperoni
+
 Testing: Order
 
 Test 1: Order should be able to read allPizzas and say what is the first topping on each
@@ -52,8 +56,59 @@ function order (list)
   {
     console.log(list.toppings[0])
   }
-   //console.log("You Ordered One Pizza. \n It is a " + pizzaOne.size + " " + pizzaOne.sauce + " sauce pizza with " + pizzaString);
+
 }
+
+Expected Result:
+
+MozzerellaFeta
+
+
+Test 2: Order should be able to work with topper, and correctly say how many pizzas were ordered.
+
+function order (list)
+{
+let orderString = "You Ordered " + list.length + " Pizzas.";
+let currentString = "";
+    for (i = 0; i < list.length; i++)
+  {
+    currentString = topper(currentString, list[i])
+    
+  	orderString.concat("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + currentString);
+  }
+ console.log(orderString);
+}
+
+Expected Result: 
+You Ordered Two Pizzas
+A large red sauce pizza with Mozzerlla Black Olives Pepperoni
+A mini white sauce pizza with Feta Green Peppers
+
+Test Failed.
+Reason: Concat isnt playing nice today
+Solution: replace concat with just a +=
+
+Test 3: Order should be able to work with topper, and correctly say how many pizzas were ordered.
+
+orderString = order(allPizzas)
+function order (list)
+{
+let orderString = "You Ordered " + list.length + " Pizzas.";
+let currentString = "";
+    for (i = 0; i < list.length; i++)
+  {
+  	let currentString = "";
+    currentString = topper(currentString, list[i])
+   
+  	orderString = orderString + ("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + currentString);
+  }
+ console.log(orderString);
+}
+
+Expected Result
+
+
+
 
 Testing: topper
 

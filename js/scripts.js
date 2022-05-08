@@ -1,4 +1,3 @@
-//business
 let pizzaString = "";
 let allPizzas = [];
 
@@ -18,7 +17,7 @@ function pizza(size, sauce, toppings, dressing) {
 function topper (pizzaString, pizza)
 {
     pizza.toppings.forEach(function(element) {
-        console.log(element)
+        //console.log(element)
       pizzaString = pizzaString.concat(element);
       pizzaString += " ";
     });
@@ -28,13 +27,17 @@ function topper (pizzaString, pizza)
 orderString = order(allPizzas)
 function order (list)
 {
+let orderString = "You Ordered " + list.length + " Pizzas.";
+let currentString = "";
     for (i = 0; i < list.length; i++)
   {
-    console.log(list[i].toppings[0])
+  	let currentString = "";
+    currentString = topper(currentString, list[i])
+   
+  	orderString = orderString + ("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + currentString);
   }
-   //console.log("You Ordered One Pizza. \n It is a " + pizzaOne.size + " " + pizzaOne.sauce + " sauce pizza with " + pizzaString);
+ console.log(orderString);
 }
-//user
 
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
