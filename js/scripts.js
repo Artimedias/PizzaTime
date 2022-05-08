@@ -22,7 +22,7 @@ function topper (pizzaString, pizza)
 
 function order (list, cost)
 {
-let orderString = "You Ordered " + list.length + " Pizzas.";
+ orderString = "You Ordered " + list.length + " Pizzas.";
 let currentString = "";
     for (i = 0; i < list.length; i++)
   {
@@ -31,7 +31,7 @@ let currentString = "";
 
     cost += parseFloat(money(list[i]))
    
-  	orderString = orderString + ("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + list[i].flavor + " " + currentString + " and " + list[i].dressing + " on the side");
+  	orderString = orderString + ("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + list[i].flavor + " " + currentString + " with " + list[i].dressing + " on the side.");
 
       
   }
@@ -41,7 +41,6 @@ let currentString = "";
 
 function extra (a, b, c)
 {
-    console.log("Reached!")
     if (a === b)
     {
         c = false;
@@ -68,7 +67,6 @@ function laser (array)
         array[i] = ""
         array[i+1] = ("Extra-" + array[i+1])
     }
-    console.log(array[i]);
   }
   return array;
 
@@ -189,7 +187,6 @@ $(document).ready(function() {
   $("#formFour").submit(function(event) {
     event.preventDefault();
     cheeseP = $("#cheeseInputOne").val();
-    console.log(cheeseP)
 
     cheeseTruth = extra(cheeseP, cheesePY, cheeseTruth)
     if(cheeseTruth === true)
@@ -210,8 +207,6 @@ $(document).ready(function() {
   $("#formFive").submit(function(event) {
     event.preventDefault();
     cheesePY = $("#cheeseInputTwo").val();
-    console.log(cheesePY);
-    console.log($("#cheeseInputTwo").val());
 
     $(".form-cheese-two").toggle();
     $(".form-meat-one").toggle();
@@ -308,7 +303,6 @@ $(document).ready(function() {
 
     hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY, spiceP];
     hat = laser(hat);
-    console.log(hat)
 
     line(sizeP, sauceP, flavorP, hat, dressingP, allPizzas);
     //orderString = order(allPizzas, price)
@@ -341,7 +335,7 @@ $(document).ready(function() {
 
     hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY, spiceP];
     hat = laser(hat);
-    console.log(hat)
+
 
     line(sizeP, sauceP, flavorP, hat, dressingP, allPizzas);
     orderString = order(allPizzas, price)

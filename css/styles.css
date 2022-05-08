@@ -1,5 +1,6 @@
 #output {
     display: none;
+    white-space: pre-line;
   }
 
 .form-sauce {
