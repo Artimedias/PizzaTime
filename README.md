@@ -146,7 +146,7 @@ function laser (array)
 {
     for (i = 0; i < array.length; i++)
   {
-    if (array[i].charAt(0) === N && array[i].charAt(1) === o)
+    if (array[i].charAt(0) === "N" && array[i].charAt(1) === "o")
     {
         array[i] = ""
     }
@@ -159,5 +159,11 @@ function laser (array)
 }
 
 Expected Result: 
+You Ordered 1 Pizzas.
+ A Mini Red sauce pizza with Extra Mozz Red Onions Mushrooms 
+
+Result: Test failed
+Reason: having "" seems to be breaking the toppings function (Nevermind it turns out I was just forgetting to return array)
+Solution: Splice out unnedded stuff (Nevermind lol)
 
 

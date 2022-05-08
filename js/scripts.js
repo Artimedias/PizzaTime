@@ -61,16 +61,19 @@ function laser (array)
 {
     for (i = 0; i < array.length; i++)
   {
-    if (array[i].charAt(0) === N && array[i].charAt(1) === o)
+    if (array[i].charAt(0) === "N" && array[i].charAt(1) === "o")
     {
         array[i] = ""
     }
     if (array[i] === array[i+1])
     {
         array[i] = ""
-        array[i+1] = ("Extra " + array[i+1])
+        array[i+1] = ("Extra-" + array[i+1])
     }
+    console.log(array[i]);
   }
+  return array;
+
 }
 
 //UI
@@ -279,6 +282,7 @@ $(document).ready(function() {
 
     hat = [cheeseP, cheesePY, meatP, meatPY, veggieP, veggiePY];
     hat = laser(hat);
+    console.log(hat)
 
     line(sizeP, sauceP, flavorP, hat, spiceP, dressingP, allPizzas);
     orderString = order(allPizzas)
