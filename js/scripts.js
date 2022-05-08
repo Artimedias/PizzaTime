@@ -15,7 +15,7 @@ function pizza(size, sauce, toppings, dressing) {
   allPizzas.push(pizzaTwo);
 
 
-function toppings (pizzaString, pizza)
+function topper (pizzaString, pizza)
 {
     pizza.toppings.forEach(function(element) {
         console.log(element)

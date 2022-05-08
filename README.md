@@ -55,6 +55,18 @@ function order (list)
    //console.log("You Ordered One Pizza. \n It is a " + pizzaOne.size + " " + pizzaOne.sauce + " sauce pizza with " + pizzaString);
 }
 
+Testing: topper
 
+Test 1: topper should be able to consolidate all toppings into a single string
+
+function topper (pizzaString, pizza)
+{
+    pizza.toppings.forEach(function(element) {
+        console.log(element)
+      pizzaString = pizzaString.concat(element);
+      pizzaString += " ";
+    });
+ return pizzaString;
+}
 
 
