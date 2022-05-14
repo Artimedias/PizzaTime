@@ -1,6 +1,6 @@
-let pizzaString = "";
+
 let allPizzas = [];
-let price = 0;
+
 
 function pizza(size, sauce, flavor, toppings, dressing) {
     this.size = size;
@@ -10,8 +10,9 @@ function pizza(size, sauce, flavor, toppings, dressing) {
     this.dressing = dressing;
   }
 
-function topper (pizzaString, pizza)
+function topper (pizza)
 {
+  let pizzaString = "";
     pizza.toppings.forEach(function(element) {
       pizzaString = pizzaString.concat(element);
       pizzaString += ", ";
@@ -20,22 +21,23 @@ function topper (pizzaString, pizza)
 }
 
 
-function order (list, cost)
+function order (list)
 {
  orderString = "You Ordered " + list.length + " Pizzas.";
 let currentString = "";
+price = 0;
     for (i = 0; i < list.length; i++)
   {
   	 currentString = "";
-    currentString = topper(currentString, list[i])
+    currentString = topper(list[i])
 
-    cost += parseFloat(money(list[i]))
+    price += parseFloat(list[i].money());
    
   	orderString = orderString + ("\n A " + list[i].size + " " + list[i].sauce + " sauce pizza with " + list[i].flavor + " " + currentString + " with " + list[i].dressing + " on the side.");
 
       
   }
-  orderString = orderString + ("\n Your total is " + cost + " dollars. \n Thank you for eating at the Mountaintop Pizza Palace.")
+  orderString = orderString + ("\n Your total is " + price + " dollars. \n Thank you for eating at the Mountaintop Pizza Palace.")
  return orderString;
 }
 
@@ -72,29 +74,29 @@ function laser (array)
 
 }
 
-function money (gold)
+pizza.prototype.money = function()
 {
     let cash = parseInt(5);
 
-    if (gold.sauce !== "")
+    if (this.sauce !== "")
     {
         cash += .5;
     }
 
-    if (gold.flavor === "Garlic")
+    if (this.flavor === "Garlic")
     {
         cash += .25;
     }
-    else if ( gold.flavor === "Basil")
+    else if ( this.flavor === "Basil")
     {
         cash += 1;
     }
-    else if (gold.flavor === "Garlic and Basil")
+    else if (this.flavor === "Garlic and Basil")
     {
         cash += 1.25;
     }
 
-    gold.toppings.forEach(function(element)
+    this.toppings.forEach(function(element)
     {
         if (element.charAt(0) === "E")
         {
@@ -106,20 +108,20 @@ function money (gold)
         }
     });
 
-    if (gold.dressing !== "No Sauce")
+    if (this.dressing !== "No Sauce")
     {
         cash += 1;
     }
 
-    if (gold.size === "Mini")
+    if (this.size === "Mini")
     {
         cash *= .75;
     }
-    else if (gold.size === "Mega")
+    else if (this.size === "Mega")
     {
         cash *= 1.5;
     }
-    else if (gold.size === "Gluten Free")
+    else if (this.size === "Gluten Free")
     {
         cash *= 1.25;
     }
@@ -160,9 +162,7 @@ $(document).ready(function() {
     $(".form-sauce").toggle();
     
   });
-});
 
-$(document).ready(function() {
   $("#formTwo").submit(function(event) {
     event.preventDefault();
     sauceP = $("#sauceInput").val();
@@ -170,9 +170,7 @@ $(document).ready(function() {
     $(".form-sauce").toggle();
     $(".form-flavor").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formThree").submit(function(event) {
     event.preventDefault();
     flavorP = $("#flavorInput").val();
@@ -181,9 +179,7 @@ $(document).ready(function() {
     $(".form-flavor").toggle();
     $(".form-cheese-one").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formFour").submit(function(event) {
     event.preventDefault();
     cheeseP = $("#cheeseInputOne").val();
@@ -201,9 +197,7 @@ $(document).ready(function() {
     $(".form-cheese-one").toggle();
 
   });
-});
 
-$(document).ready(function() {
   $("#formFive").submit(function(event) {
     event.preventDefault();
     cheesePY = $("#cheeseInputTwo").val();
@@ -211,9 +205,7 @@ $(document).ready(function() {
     $(".form-cheese-two").toggle();
     $(".form-meat-one").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formSix").submit(function(event) {
     event.preventDefault();
     meatP = $("#meatInputOne").val();
@@ -230,9 +222,7 @@ $(document).ready(function() {
 
     $(".form-meat-one").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formSeven").submit(function(event) {
     event.preventDefault();
     meatPY = $("#meatInputTwo").val();
@@ -240,9 +230,7 @@ $(document).ready(function() {
     $(".form-meat-two").toggle();
     $(".form-veggies-one").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formEight").submit(function(event) {
     event.preventDefault();
     veggieP = $("#veggieInputOne").val();
@@ -260,9 +248,7 @@ $(document).ready(function() {
 
     $(".form-veggies-one").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formNine").submit(function(event) {
     event.preventDefault();
     veggiePY = $("#veggieInputTwo").val();
@@ -270,9 +256,7 @@ $(document).ready(function() {
     $(".form-veggies-two").toggle();
     $(".form-spice").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formTen").submit(function(event) {
     event.preventDefault();
     spiceP = $("#spiceInput").val();
@@ -280,9 +264,7 @@ $(document).ready(function() {
     $(".form-spice").toggle();
     $(".form-dessing").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formEleven").submit(function(event) {
     event.preventDefault();
     dressingP = $("#dressingInput").val();
@@ -291,9 +273,7 @@ $(document).ready(function() {
     $(".form-newPizza").toggle();
     $(".No").toggle();
   });
-});
 
-$(document).ready(function() {
   $("#formTwelve").submit(function(event) {
     event.preventDefault();
 
@@ -323,9 +303,9 @@ $(document).ready(function() {
      meatTruth = true;
      veggieTruth = true;
   });
-});
 
-$(document).ready(function() {
+
+
   $("#formThirteen").submit(function(event) {
     event.preventDefault();
 
@@ -338,7 +318,7 @@ $(document).ready(function() {
 
 
     line(sizeP, sauceP, flavorP, hat, dressingP, allPizzas);
-    orderString = order(allPizzas, price)
+    orderString = order(allPizzas)
     $(".securityCode").text(orderString);
 
     $("#output").toggle();
